@@ -30,7 +30,7 @@ function App() {
       id: 6,
       nome: 'cloud'
     },
-    
+
   ]
 
   return (
@@ -40,24 +40,31 @@ function App() {
       </header>
       <Banner />
       <FormularioDeEvento />
-      <section>
-        <Tema tema={temas[0]}/>
+      {temas.map(function (item) {
+        return (
+          <section key={item.id}>
+            <Tema tema={item} />
+          </section>
+        )
+        })}
+      {/* <section>
+        <Tema tema={temas[0]} />
       </section>
       <section>
-        <Tema tema={temas[1]}/>
+        <Tema tema={temas[1]} />
       </section>
       <section>
-        <Tema tema={temas[2]}/>
+        <Tema tema={temas[2]} />
       </section>
       <section>
-        <Tema tema={temas[3]}/>
+        <Tema tema={temas[3]} />
       </section>
       <section>
-        <Tema tema={temas[4]}/>
+        <Tema tema={temas[4]} />
       </section>
       <section>
-        <Tema tema={temas[5]}/>
-      </section>
+        <Tema tema={temas[5]} />
+      </section> */}
     </main>
   );
 }
